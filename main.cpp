@@ -5,13 +5,17 @@
 using namespace std;
 
 int main() {
-  set<string> s;
+  set<string> s, duplicates;
 
   for (string line; getline(cin, line);) {
     if (s.insert(line).second == false) {
-      cout << line << endl;
+			duplicates.insert(line);
     }
   }
+
+	for (string line : duplicates) {
+		cout << line << endl;
+	}
 
   return 0;
 }
