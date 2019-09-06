@@ -9,13 +9,13 @@ int main() {
 
   for (string line; getline(cin, line);) {
     if (s.insert(line).second == false) {
-			duplicates.insert(line);
+      duplicates.insert(line);
     }
   }
 
-	for (string line : duplicates) {
-		cout << line << endl;
-	}
+  for (string line : duplicates) {
+    cout << line << endl;
+  }
 
   return 0;
 }
