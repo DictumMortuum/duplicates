@@ -1,11 +1,14 @@
+PREFIX=/usr/local
+
 duplicates: main.cpp
 	g++ -o duplicates main.cpp
 
 install: duplicates
-	cp $< ~/.local/bin/duplicates
+	mkdir -p $(PREFIX)/bin
+	cp -f $< $(PREFIX)/bin/duplicates
 
 uninstall:
-	rm -f ~/.local/bin/duplicates
+	rm -f $(PREFIX)/bin/duplicates
 
 clean: duplicates
 	rm $<
